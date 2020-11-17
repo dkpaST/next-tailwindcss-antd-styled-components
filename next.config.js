@@ -5,6 +5,7 @@ const fs = require('fs')
 const path = require('path')
 const withSass = require('@zeit/next-sass')
 const withCSS = require('@zeit/next-css')
+const withImages = require('next-images')
 
 // Where your antd-custom.less file lives
 const themeVariables = lessToJS(
@@ -16,7 +17,8 @@ if (typeof require !== 'undefined') {
     require.extensions['.css'] = file => { }
 }
 
-module.exports = withCSS(withLess(withSass({
+module.exports = withImages({
+  ...withCSS(withLess(withSass({
     lessLoaderOptions: {
         javascriptEnabled: true,
         modifyVars: themeVariables, // make your antd custom effective
@@ -46,4 +48,4 @@ module.exports = withCSS(withLess(withSass({
         }
         return config
     },
-})))
+}))), esModule: true })

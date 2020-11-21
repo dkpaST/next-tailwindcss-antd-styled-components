@@ -1,9 +1,18 @@
-import React from 'react';
+import React from "react";
 
-const Footer: React.FC = () => {
-  return (
-    <h1>Footer</h1>
-  );
-}
+import styled from "@emotion/styled";
+import { Button as Btn, Heading } from "@chakra-ui/core";
+
+const Button = styled.button`
+  color: turquoise;
+`;
+
+const Footer: React.FC = () => (
+  <>
+    <Heading as="h1">Footer</Heading>
+    <Button>GO</Button>
+    <Btn>TEST</Btn>
+  </>
+);
 
 export default Footer;

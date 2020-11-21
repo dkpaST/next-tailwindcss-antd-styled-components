@@ -1,5 +1,8 @@
 import Head from "next/head";
 
+import { Heading } from "@chakra-ui/core";
+
+import Footer from "~/components/Footer";
 import MetaTags from "~/components/MetaTags";
 
 const IndexPage = props => (
@@ -7,8 +10,10 @@ const IndexPage = props => (
     <MetaTags title="Home" />
 
     <main>
-      <h1 className="text-center text-6xl">Hello Word</h1>
+      <Heading size="2xl">Hello Word</Heading>
     </main>
+
+    <Footer />
   </div>
 );
 
